@@ -1,0 +1,109 @@
+
+body{
+	font-family:"Droid Sans", "Pacifico", "PT Sans Caption", "verdana, sans-serif";
+}
+
+log.INFO{
+	font-family:"Arial, sans-serif";
+}
+
+log.WARNING{
+	font-family:"Arial, sans-serif";
+	color:#FFFF00;
+}
+
+log.ERROR{
+	font-family:"Arial, sans-serif, bold";
+	color:#FF0000;
+	font-weight:bold;
+}
+
+td{
+	color: #666666;
+//	font-size:80%;
+}
+
+#Navigation{
+color: #CCCC9A;
+background-color: #666666;
+float: left;
+width: 18%;
+heigt: 100%;
+margin: 0;
+padding: 0 1%;
+}
+
+#Navigation h2 {
+	margin: 5 0 0 0;
+	font-size:150%
+}
+
+#Content{
+color: #666666;
+background-color: #CCCC9A;
+float: left;
+width: 70%;
+margin: 0;
+padding: 5%;
+}
+
+a:link, a:visited {
+	color: #CCCCCC;
+	font-size: 80%;
+	margin-left: 20px;
+}
+
+a:hover {
+	font-style:oblique;
+}
+
+
+/* On-Off Switch
+   Quelle: https://proto.io/freebies/onoff/
+*/
+
+.onoffswitch {
+    position: relative; width: 62px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #666666; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "EIN";
+    padding-left: 10px;
+    background-color: #666666; color: #CCCC9A;
+}
+.onoffswitch-inner:after {
+    content: "AUS";
+    padding-right: 6px;
+    background-color: #EEEEEE; color: #666666;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 20px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 38px;
+    border: 2px solid #666666; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
