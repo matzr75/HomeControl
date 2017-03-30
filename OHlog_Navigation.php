@@ -19,15 +19,22 @@
                 $list = array();
 	}
 
-        echo "Item Liste<br>";
-        echo "<select name='item' onchange='this.form.submit();'>
-        	<option value=''>Auswahl...</option>";
-
-        while($row = mysqli_fetch_array($result))
-        {
-               echo "<option value=".$row['ItemId'].">".$row['ItemName']."</option>";
-         }
-        echo"</select>";
+	echo "<table>
+		<tr><td><button name='PV' type='button' onclick='this.form.submit();'>Photovoltaik Übersicht</button>
+		</td></tr>
+		<tr><td>OpenHAB Log:<br>
+        		<select name='OH_item' onchange='this.form.submit();'>
+	        	<option value=''>Auswahl...</option>";
+		
+        		while($row = mysqli_fetch_array($result))
+        		{
+               			echo "<option value=".$row['ItemId'].">".$row['ItemName']."</option>";
+         		}
+        		echo"</select>";
+		echo "</td></tr>
+		<tr><td><button name='Status' type='button' onclick='this.form.submit();'>Server Status</button>
+		</td></tr>
+		</table>";
 	echo"</form>";
 ?>
 </body>
