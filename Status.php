@@ -1,14 +1,6 @@
 
-<!-- <html>
-<head>
-<link href="Reinagl.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div id="Navigation">
-	<?//php include("Status_Navigation.php");?>
-</div>
-<div id="Content"> -->
 <?php
+	echo "<h1>Server Status</h1>";
 	// get IP address
 	$externalContent = file_get_contents('http://checkip.dyndns.com/');
 	preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
@@ -46,8 +38,4 @@
 		echo $logLine . "</log><br>";
 	}
 
-?> 
-<!-- </div>
-
-</body>
-</html> -->
+?>
