@@ -4,7 +4,7 @@
 </head>
 <body>
 <script>
-function loadDoc(itemName) {
+function loadDoc(call) {
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -12,7 +12,7 @@ function loadDoc(itemName) {
       document.getElementById("Content").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "OHlog.php?item=" + itemName, true);
+  xhttp.open("GET", call, true);
   xhttp.send();
 }
 
