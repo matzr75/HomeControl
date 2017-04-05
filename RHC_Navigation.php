@@ -8,7 +8,7 @@
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 
-//	echo"<form action='OHlog.php' method='post'>";
+	echo"<form>";
 
         // Setup Database Connection
         if (!class_exists('myDB')) {include "DBConnect.php";}
@@ -35,7 +35,7 @@
 		<tr><td><button name='Status' type='button' onclick=''>Server Status</button>
 		</td></tr>
 		</table>";
-//	echo"</form>";
+	echo"</form>";
 ?>
 </body>
 </html>
