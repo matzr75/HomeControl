@@ -1,16 +1,4 @@
-
-<!-- <html> 
-<head>
-<link href="Reinagl.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div id="Navigation">
-	 <?//php include("OHlog_Navigation.php");?>
-</div>
-<div id="Content">-->
 <?php
-echo "Hello World<br>";
-echo "item = " . $_REQUEST["item"];
 if (isset($_REQUEST["item"]))
 {
 	$table = "Item" . $_REQUEST["item"];
@@ -50,7 +38,3 @@ if (isset($_REQUEST["item"]))
 	}
 }
 ?>
-<!-- </div>
-
-</body>
-</html> -->

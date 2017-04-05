@@ -20,7 +20,7 @@
 	}
 
 	echo "<table>
-		<tr><td><button name='PV' type='button' onclick=''>Photovoltaik Übersicht</button>
+		<tr><td><button name='PV' type='button' onclick=loadDoc('PV_Overview.php')>Photovoltaik Übersicht</button>
 		</td></tr>
 		<tr><td>OpenHAB Log:<br>
         		<select name='OH_item' onchange=\"loadDoc('OHlog.php?item=' + this.value)\">
