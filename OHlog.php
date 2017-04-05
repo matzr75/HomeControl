@@ -9,6 +9,7 @@
 </div>
 <div id="Content">-->
 <?php
+echo "Hello World";
 if (isset($_POST["item"]))
 {
 	$table = "Item" . $_POST["item"];
