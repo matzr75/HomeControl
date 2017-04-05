@@ -10,7 +10,7 @@
 <div id="Content">-->
 <?php
 echo "Hello World<br>";
-echo "item = " . $_POST["item"]
+echo "item = " . $_POST["item"];
 if (isset($_POST["item"]))
 {
 	$table = "Item" . $_POST["item"];
