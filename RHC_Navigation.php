@@ -23,7 +23,7 @@
 		<tr><td><button name='PV' type='button' onclick=''>Photovoltaik Übersicht</button>
 		</td></tr>
 		<tr><td>OpenHAB Log:<br>
-        		<select name='OH_item' onchange='loadDoc(this.value)'>
+        		<select name='OH_item' onchange='loadDoc(''' OHlog.php?item=''' + this.value)'>
 	        	<option value=''>Auswahl...</option>";
 		
         		while($row = mysqli_fetch_array($result))
@@ -32,7 +32,7 @@
          		}
         		echo"</select>";
 		echo "</td></tr>
-		<tr><td><button name='Status' type='button' onclick=''>Server Status</button>
+		<tr><td><button name='Status' type='button' onclick=loadDoc('Status.php')>Server Status</button>
 		</td></tr>
 		</table>";
 	echo"</form>";

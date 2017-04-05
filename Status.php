@@ -1,13 +1,13 @@
 
-<html>
+<!-- <html>
 <head>
 <link href="Reinagl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="Navigation">
-	<?php include("Status_Navigation.php");?>
+	<?//php include("Status_Navigation.php");?>
 </div>
-<div id="Content">
+<div id="Content"> -->
 <?php
 	// get IP address
 	$externalContent = file_get_contents('http://checkip.dyndns.com/');
@@ -46,8 +46,8 @@
 		echo $logLine . "</log><br>";
 	}
 
-?>
-</div>
+?> 
+<!-- </div>
 
 </body>
-</html>
+</html> -->
