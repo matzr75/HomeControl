@@ -9,7 +9,7 @@ function loadDoc(itemName) {
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("content").innerHTML = this.responseText;
+      document.getElementById("Content").innerHTML = this.responseText;
     }
   };
   xhttp.open("GET", "OHLog.php?item=" + itemName, true);
@@ -19,8 +19,8 @@ function loadDoc(itemName) {
 </script>
 <div id="Navigation">
 	<?php
-	#include("RHC_Navigation.php");
-	echo"<form action='OHlog.php' method='post'>";
+	include("RHC_Navigation.php");
+	/*echo"<form action='OHlog.php' method='post'>";
         // Setup Database Connection
         if (!class_exists('myDB')) {include "DBConnect.php";}
         $db2 = new myDB("openHAB");
@@ -45,7 +45,7 @@ function loadDoc(itemName) {
 		</td></tr>
 		</table>";
 	echo"</form>";	
-	?>
+	?>*/
 </div>
 <div id="Content">
 
