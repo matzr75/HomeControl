@@ -8,7 +8,7 @@
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 
-	echo"<form action='OHlog.php' method='post'>";
+//	echo"<form action='OHlog.php' method='post'>";
 
         // Setup Database Connection
         if (!class_exists('myDB')) {include "DBConnect.php";}
@@ -20,10 +20,10 @@
 	}
 
 	echo "<table>
-		<tr><td><button name='PV' type='button' onclick='this.form.submit();'>Photovoltaik Übersicht</button>
+		<tr><td><button name='PV' type='button' onclick=''>Photovoltaik Übersicht</button>
 		</td></tr>
 		<tr><td>OpenHAB Log:<br>
-        		<select name='OH_item' onchange='this.form.submit();'>
+        		<select name='OH_item' onchange='loadDoc(this.value)'>
 	        	<option value=''>Auswahl...</option>";
 		
         		while($row = mysqli_fetch_array($result))
@@ -32,10 +32,10 @@
          		}
         		echo"</select>";
 		echo "</td></tr>
-		<tr><td><button name='Status' type='button' onclick='this.form.submit();'>Server Status</button>
+		<tr><td><button name='Status' type='button' onclick=''>Server Status</button>
 		</td></tr>
 		</table>";
-	echo"</form>";
+//	echo"</form>";
 ?>
 </body>
 </html>

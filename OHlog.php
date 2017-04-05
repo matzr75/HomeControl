@@ -1,13 +1,13 @@
 
-<html>
+<!-- <html> 
 <head>
 <link href="Reinagl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="Navigation">
-	<?php include("OHlog_Navigation.php");?>
+	 <?//php include("OHlog_Navigation.php");?>
 </div>
-<div id="Content">
+<div id="Content">-->
 <?php
 if (isset($_POST["item"]))
 {
@@ -48,7 +48,7 @@ if (isset($_POST["item"]))
 	}
 }
 ?>
-</div>
+<!-- </div>
 
 </body>
-</html>
+</html> -->

@@ -3,6 +3,20 @@
 <link href="Reinagl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<script>
+function loadDoc(itemName) {
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("content").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "OHLog.php?item=" + itemName, true);
+  xhttp.send();
+}
+
+</script>
 <div id="Navigation">
 	<?php
 	#include("RHC_Navigation.php");
