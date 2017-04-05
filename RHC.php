@@ -12,7 +12,7 @@ function loadDoc(itemName) {
       document.getElementById("Content").innerHTML = this.responseText;
     }
   };
-  xhttp.open("POST", "OHlog.php?item=" + itemName, true);
+  xhttp.open("GET", "OHlog.php?item=" + itemName, true);
   xhttp.send();
 }
 

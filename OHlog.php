@@ -10,17 +10,17 @@
 <div id="Content">-->
 <?php
 echo "Hello World<br>";
-echo "item = " . $_POST["item"];
-if (isset($_POST["item"]))
+echo "item = " . $_REQUEST["item"];
+if (isset($_REQUEST["item"]))
 {
-	$table = "Item" . $_POST["item"];
+	$table = "Item" . $_REQUEST["item"];
 
 	// Setup Database Connection
 	if (!class_exists('myDB')) {include "DBConnect.php";}
 	$db = new myDB("openHAB");
 
 	if (!is_null($db) ) {
-		$result = mysqli_fetch_row(mysqli_query($db->con,"Select ItemName FROM Items WHERE ItemId = ".$_POST["item"]));
+		$result = mysqli_fetch_row(mysqli_query($db->con,"Select ItemName FROM Items WHERE ItemId = ".$_REQUEST["item"]));
 		echo"<h1>" . $result[0] . "</h1>";
 		$orderField = "Time";
 		$orderDir = "DESC";
