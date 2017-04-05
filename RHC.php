@@ -12,7 +12,7 @@ function loadDoc(itemName) {
       document.getElementById("Content").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "OHLog.php?item=" + itemName, true);
+  xhttp.open("POST", "OHLog.php?item=" + itemName, true);
   xhttp.send();
 }
 
@@ -44,8 +44,8 @@ function loadDoc(itemName) {
 		<tr><td><button name='Status' type='button' onclick='this.form.submit();'>Server Status</button>
 		</td></tr>
 		</table>";
-	echo"</form>";	
-	?>*/
+	echo"</form>";	*/	
+	?>
 </div>
 <div id="Content">
 
