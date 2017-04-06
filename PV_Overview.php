@@ -4,30 +4,30 @@ if (!class_exists('myDB')) {include "DBConnect.php";}
 $db = new myDB("PV");
 
 if (!is_null($db) ) {
-	$result = mysqli_fetch_row(mysqli_query($db->con,"Select ItemName FROM Items WHERE ItemId = ".$_POST["item"]));
-	echo"<h1>" . $result[0] . "</h1>";
-	$orderField = "Time";
+	$orderField = "Day";
 	$orderDir = "DESC";
-	$result = mysqli_query($db->con,"SELECT Time, value FROM " . $table . " ORDER BY " . $orderField . " " . $orderDir);
+	$result = mysqli_query($db->con,"SELECT day, Stromverbrauch, Produktion, Einspeisung, Eigenverbrauch FROM V_OVERVIEW ORDER BY " . $orderField . " " . $orderDir);
 	$list = array();
 
 	echo "
 	<table>
-		<colgroup>
-   			<col width='200'>
-    		<col width='150'>
-		</colgroup>
 	<tr>
-		<th>Zeit</th>
-		<th>Wert</th>
+		<th>Tag</th>
+		<th>Verbrauch</th>
+		<th>Produktion</th>
+		<th>Einspeisung</th>
+		<th>Eigenverbrauch</th>
 	</tr>";
 
 	while($row = mysqli_fetch_array($result))
 	{
-		$List[$row['Time']] = $row['value'];
+	//	$List[$row['Time']] = $row['value'];
 		echo "<tr>";
-			echo "<td>" . $row['Time'] . "</td>";
-			echo "<td>" . $row['value'] . "</td>";
+			echo "<td>" . $row['day'] . "</td>";
+			echo "<td>" . $row['Stromverbrauch'] . "</td>";
+			echo "<td>" . $row['Produktion'] . "</td>";
+			echo "<td>" . $row['Einspeisung'] . "</td>";
+			echo "<td>" . $row['Eigenverbrauch'] . "</td>";
 	}
 
 	echo "</table>";
