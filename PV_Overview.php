@@ -1,10 +1,11 @@
 <?php
 // Setup Database Connection
+echo "<h1>Übersicht Photovoltaik</h1>";
 if (!class_exists('myDB')) {include "DBConnect.php";}
 $db = new myDB("PV");
 
 if (!is_null($db) ) {
-	$orderField = "Day";
+	$orderField = "day";
 	$orderDir = "DESC";
 	$result = mysqli_query($db->con,"SELECT day, Stromverbrauch, Produktion, Einspeisung, Eigenverbrauch FROM V_OVERVIEW ORDER BY " . $orderField . " " . $orderDir);
 	$list = array();
@@ -31,6 +32,6 @@ if (!is_null($db) ) {
 	}
 
 	echo "</table>";
-	}
+//	}*/
 }
 ?>
