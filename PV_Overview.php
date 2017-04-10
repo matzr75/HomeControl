@@ -10,7 +10,7 @@ if (!is_null($db) ) {
 	$sql = "
 		SELECT t1.day, 
 			t1.Stromverbrauch, 
-			t1.Produktion, ,
+			t1.Produktion,
 			t1.Einspeisung, 
 			t1.Eigenverbrauch, 
 			(	select RateValue 
