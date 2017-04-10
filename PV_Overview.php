@@ -8,11 +8,11 @@ if (!is_null($db) ) {
 	$orderField = "day";
 	$orderDir = "DESC";
 	$sql = "
-		SELECT t1.day, 
-			t1.Stromverbrauch, 
-			t1.Produktion,
-			t1.Einspeisung, 
-			t1.Eigenverbrauch, 
+		SELECT day,
+			Stromverbrauch,
+			Produktion,
+			Einspeisung,
+			Eigenverbrauch, 
 			(	select RateValue 
 				from T_Rates 
 				where RateType = 'Ertrag_je_kWH' 
@@ -24,13 +24,14 @@ if (!is_null($db) ) {
 				from T_Rates 
 				where RateType = 'Kosten_je_kWH' 
 					and DateFrom <= t1.day 
-					and (DateTo >= t1.day OR DateTo isNULL)
+					and (DateTo >= t1.day OR DateTo is NULL)
 			)*Eigenverbrauch/1000 as Ertrag_Eigennutzung 
 		FROM `V_OVERVIEW` t1
 		ORDER BY " . $orderField . " " . $orderDir;
-	$result = mysqli_query($db->con, $sql);
+	echo $sql;
+	echo $result = mysqli_query($db->con, $sql);
 	$list = array();
-
+echo $result;
 	echo "
 	<table>
 	<tr>
@@ -41,9 +42,16 @@ if (!is_null($db) ) {
 		<th>Eigenverbrauch</th>
 		<th>Ertrag Eingennutzung</th>
 		<th>Ertrag Einspeisung</th>
-		<th>Gesamtertrag</th>
+<!--		<th>Gesamtertrag</th>-->
 	</tr>";
 
+	echo "<tr><td>1</td>";
+	echo "<td>2</td>";
+	echo "<td>3</td>";
+	echo "<td>4</td>";
+	echo "<td>5</td>";
+	echo "<td>6</td>";
+	echo "<td>7</td></tr>";
 	while($row = mysqli_fetch_array($result))
 	{
 	//	$List[$row['Time']] = $row['value'];
@@ -53,13 +61,12 @@ if (!is_null($db) ) {
 			echo "<td>" . $row['Produktion'] . "</td>";
 			echo "<td>" . $row['Einspeisung'] . "</td>";
 			echo "<td>" . $row['Eigenverbrauch'] . "</td>";
-			echo "<td>" . $row['Eigenverbrauch'] . "</td>";
-			echo "<td>" . $row['Ertrag_Eingennutzung'] . "</td>";
+			echo "<td>" . $row['Ertrag_Eigennutzung'] . "</td>";
 			echo "<td>" . $row['Ertrag_Einspeisung'] . "</td>";
-			echo "<td>" . ($row['Ertrag_Eingennutzung'] + $row['Ertrag_Einspeisung']) . "</td>";
+//			echo "<td>" . ($row['Ertrag_Eingennutzung'] + $row['Ertrag_Einspeisung']) . "</td>";
+		echo "</tr>";
 	}
 
 	echo "</table>";
-//	}*/
 }
 ?>
