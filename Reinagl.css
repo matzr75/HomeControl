@@ -18,9 +18,16 @@ log.ERROR{
 	font-weight:bold;
 }
 
+th{
+	color:#CCCC9A;
+	background-color: #666666;
+	font-size:80%;
+	text-align: center;
+}
+
 td{
 	color: #666666;
-//	font-size:80%;
+	font-size:80%;
 }
 
 #Navigation{

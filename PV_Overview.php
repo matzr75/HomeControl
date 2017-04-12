@@ -20,6 +20,11 @@ if (!is_null($db) ) {
 
 	echo "
 	<table>
+	<colgroup>
+		<col style='width: 120px; text-align: center'>
+		<col span='4' style='width: 80px'>
+		<col span='3' style='width: 150px'>
+	</colgroup>
 	<tr>
 		<th>Tag</th>
 		<th>Verbrauch<br>[kWh]</th>
@@ -31,39 +36,39 @@ if (!is_null($db) ) {
 		<th>Gesamtertrag<br>[€]</th>
 	</tr>
 
-	<tr>
+	<tr style='text-align: right'>
 		<td style='text-align: left'>$result_week[0]</td>
-		<td style='text-align: right'>" . number_format($result_week[1]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_week[2]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_week[3]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_week[4]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_week[5], 2) . "</td>
-		<td style='text-align: right'>" . number_format($result_week[6], 2) . "</td>
-		<td style='text-align: right'>" . number_format(($result_week[5] + $result_week[6]), 2) . "</td>
+		<td>" . number_format($result_week[1]/1000, 1) . "</td>
+		<td>" . number_format($result_week[2]/1000, 1) . "</td>
+		<td>" . number_format($result_week[3]/1000, 1) . "</td>
+		<td>" . number_format($result_week[4]/1000, 1) . "</td>
+		<td>" . number_format($result_week[5], 2) . "</td>
+		<td>" . number_format($result_week[6], 2) . "</td>
+		<td>" . number_format(($result_week[5] + $result_week[6]), 2) . "</td>
 	</tr>
-	<tr>
+	<tr style='text-align: right'>
 		<td style='text-align: left'>$result_month[0]</td>
-		<td style='text-align: right'>" . number_format($result_month[1]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_month[2]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_month[3]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_month[4]/1000, 1) . "</td>
-		<td style='text-align: right'>" . number_format($result_month[5], 2) . "</td>
-		<td style='text-align: right'>" . number_format($result_month[6], 2) . "</td>
-		<td style='text-align: right'>" . number_format(($result_month[5] + $result_month[6]), 2) . "</td>
+		<td>" . number_format($result_month[1]/1000, 1) . "</td>
+		<td>" . number_format($result_month[2]/1000, 1) . "</td>
+		<td>" . number_format($result_month[3]/1000, 1) . "</td>
+		<td>" . number_format($result_month[4]/1000, 1) . "</td>
+		<td>" . number_format($result_month[5], 2) . "</td>
+		<td>" . number_format($result_month[6], 2) . "</td>
+		<td>" . number_format(($result_month[5] + $result_month[6]), 2) . "</td>
 	</tr>
 	<tr><td colspan='8'></td></tr>";
 
 	while($row = mysqli_fetch_array($result))
 	{
-		echo "<tr>";
-			echo "<td>" . $row['day'] . "</td>";
-			echo "<td style='text-align: right'>" . number_format($row['Stromverbrauch']/1000, 1) . "</td>";
-			echo "<td style='text-align: right'>" . number_format($row['Produktion']/1000, 1) . "</td>";
-			echo "<td style='text-align: right'>" . number_format($row['Einspeisung']/1000, 1) . "</td>";
-			echo "<td style='text-align: right'>" . number_format($row['Eigenverbrauch']/1000, 1) . "</td>";
-			echo "<td style='text-align: right'>" . number_format($row['Einsparung_Eigennutzung'], 2) . "</td>";
-			echo "<td style='text-align: right'>" . number_format($row['Ertrag_Einspeisung'], 2) . "</td>";
-			echo "<td style='text-align: right'>" . number_format(($row['Einsparung_Eigennutzung'] + $row['Ertrag_Einspeisung']), 2) . "</td>";
+		echo "<tr style='text-align: right'>";
+			echo "<td style='text-align: left'>" . $row['day'] . "</td>";
+			echo "<td>" . number_format($row['Stromverbrauch']/1000, 1) . "</td>";
+			echo "<td>" . number_format($row['Produktion']/1000, 1) . "</td>";
+			echo "<td>" . number_format($row['Einspeisung']/1000, 1) . "</td>";
+			echo "<td>" . number_format($row['Eigenverbrauch']/1000, 1) . "</td>";
+			echo "<td>" . number_format($row['Einsparung_Eigennutzung'], 2) . "</td>";
+			echo "<td>" . number_format($row['Ertrag_Einspeisung'], 2) . "</td>";
+			echo "<td>" . number_format(($row['Einsparung_Eigennutzung'] + $row['Ertrag_Einspeisung']), 2) . "</td>";
 		echo "</tr>";
 	}
 
